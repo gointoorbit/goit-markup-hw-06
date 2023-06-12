@@ -287,14 +287,30 @@ p {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.circle:hover,
-.circle:focus {
+.circle:hover {
   border: solid 1px var(--logo-color-first);
+}
+
+.modal-close:focus-within .close {
+  fill: var(--logo-color-first);
+}
+
+.modal-close:focus {
+  outline: none;
+}
+
+.modal-close:focus .circle {
+  border: 1px solid var(--logo-color-first);
 }
 
 .circle:hover .close,
 .circle:focus .close {
   fill: var(--logo-color-first);
+  outline: none;
+}
+
+.section {
+  padding-block: 94px;
 }
 
 .form-user-data {
@@ -315,6 +331,7 @@ p {
   font-size: 12px;
   line-height: 1.17;
   color: var(--text-color);
+  letter-spacing: 0.01em;
 }
 
 .text-data input {
@@ -322,18 +339,31 @@ p {
   width: 448px;
   height: 40px;
   margin-block: 4px 10px;
+  padding-left: 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.input-name {
+.text-data {
   position: relative;
 }
 
 .icon-input {
   position: absolute;
-  top: 14px;
+  top: 32px;
   left: 15px;
   fill: var(--headline-color);
-  z-index: 2;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-data input:focus {
+  border: 1px solid var(--logo-color-first);
+  outline: none;
+}
+
+.text-data:focus-within .icon-input {
+  fill: var(--logo-color-first);
 }
 
 .text-data textarea {
@@ -342,47 +372,70 @@ p {
   width: 448px;
   height: 120px;
   padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .text-data textarea::placeholder {
   font-size: 12px;
   line-height: 1.17;
   color: rgba(117, 117, 117, 0.5);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.comment:focus {
+  border: 1px solid var(--logo-color-first);
+  outline: none;
+}
+
+.comment:focus::placeholder {
+  color: var(--logo-color-first);
+}
+
+.checkbox-label {
+  font-size: 14px;
+  line-height: 1.71;
+}
+.checkbox-box {
+  width: 16px;
+  height: 15px;
+  margin-inline: 15px 8px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+.approval {
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .approval .link {
   color: var(--logo-color-first);
 }
 
-.checkbox-box {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
+.not-checked {
+  position: absolute;
+  left: 15px;
+  transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.approval-checked {
-  width: 16px;
-  height: 15px;
-  border: 2px solid var(--headline-color);
-  border-radius: 4px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.checkbox-box:checked ~ .not-checked {
+  visibility: hidden;
 }
 
-.checkbox-box:checked ~ .approval-checked {
-  border: 0 solid #212121;
-}
-
-.checked-icon {
-  display: block;
+.checked {
+  position: absolute;
+  left: 15px;
   visibility: hidden;
   transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.checkbox-box:checked ~ .approval-checked .checked-icon {
-  display: block;
+.checkbox-box:checked ~ .checked {
   visibility: visible;
 }
-
 .send-data {
   display: block;
   width: 200px;
@@ -394,6 +447,13 @@ p {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.send-data:focus,
+.send-data:hover {
+  color: var(--logo-color-second);
+  outline: none;
 }
 
 .lorem-ipsum,
@@ -697,37 +757,54 @@ p {
   font-size: 16px;
   line-height: 1.25;
   color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-newsletter:focus {
   border: 1px solid var(--logo-color-first);
+  outline: none;
+}
+
+.input-newsletter:focus::placeholder {
+  color: var(--logo-color-first);
 }
 
 .sign-up {
-  display: inline-block;
+  display: block;
   width: 200px;
   height: 50px;
   font-size: 16px;
-  line-height: 1.87;
+  line-height: 1.875;
   font-weight: 700;
   letter-spacing: 0.06em;
   color: var(--dark-background-text-color);
   background-color: var(--logo-color-first);
   border: none;
   border-radius: 4px;
-  padding: 10px 28px 10px 42px;
+  padding: 10px 75px 10px 42px;
+  position: relative;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .send {
   fill: var(--header-background);
-  margin-left: 24px;
+  position: absolute;
+  top: 13px;
+  left: 148px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button-sign-up {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.sign-up:focus,
+.sign-up:hover {
+  color: var(--logo-color-second);
+  outline: none;
 }
+
+.sign-up:focus .send,
+.sign-up:hover .send {
+  fill: var(--logo-color-second);
+}
+
 .portfolio-content {
   background-color: var(--light-background);
   width: 1600px;

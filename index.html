@@ -85,27 +85,56 @@
                 Zostaw swoje dane w formularzu poniżej
               </p>
               <div class="text-data">
-                <label for="user-name">Imię </label>
-                <input
-                  id="user-name"
-                  type="text"
-                  name="user-name"
-                  class="input-name"
-                />
+                <label class="form-input-icon" for="user-name"
+                  >Imię
+                  <input
+                    id="user-name"
+                    type="text"
+                    name="user-name"
+                    class="input-name"
+                  />
+                </label>
                 <svg class="icon-input" width="12px" height="12px">
                   <use href="images/icons.svg#icon-person-black-18dp-1"></use>
                 </svg>
-                <label for="phone-no">Telefon</label>
-                <input id="phone-no" type="tel" name="phone-number" />
-
-                <label for="email">Email</label>
-                <input id="email" type="email" name="user-email" />
-                <label for="user-opinion">Komentarz</label>
-                <textarea
-                  id="user-opinion"
-                  name="user-opinion"
-                  placeholder="Wprowadź tekst"
-                ></textarea>
+              </div>
+              <div class="text-data">
+                <label class="form-input-icon" for="phone-no"
+                  >Telefon
+                  <input
+                    id="phone-no"
+                    type="tel"
+                    name="phone-number"
+                    class="input-phone-no"
+                /></label>
+                <svg class="icon-input" width="13px" height="13px">
+                  <use href="images/icons.svg#icon-phone-black-18dp-1"></use>
+                </svg>
+              </div>
+              <div class="text-data">
+                <label class="form-input-icon" for="email"
+                  >Email
+                  <input
+                    id="email"
+                    type="email"
+                    name="user-email"
+                    class="input-email"
+                  />
+                </label>
+                <svg class="icon-input" width="15px" height="12px">
+                  <use href="images/icons.svg#icon-email-black-18dp-1"></use>
+                </svg>
+              </div>
+              <div class="text-data">
+                <label for="user-opinion"
+                  >Komentarz
+                  <textarea
+                    id="user-opinion"
+                    name="user-opinion"
+                    placeholder="Wprowadź tekst"
+                    class="comment"
+                  ></textarea>
+                </label>
               </div>
               <div class="approval">
                 <input
@@ -114,14 +143,16 @@
                   value="agreement"
                   id="statutes"
                   class="checkbox-box"
+                  required
                 />
-                <div class="approval-checked">
-                  <svg class="checked-icon" width="16px" height="15px">
-                    <use href="images/icons.svg#icon-icon-check"></use>
-                  </svg>
-                </div>
-                <label for="statutes"
-                  >Oświadczam iż akceptuję
+                <svg class="not-checked" width="16px" height="15px">
+                  <use href="images/icons.svg#icon-Vector"></use>
+                </svg>
+                <svg class="checked" width="16px" height="15px">
+                  <use href="images/icons.svg#icon-icon-check"></use>
+                </svg>
+                <label for="statutes" class="checkbox-label">
+                  Oświadczam iż akceptuję
                   <a class="link" href="./statutes">Regulamin</a> i
                   <a class="link" href="./privacy_policy"
                     >Politykę Prywatności.</a
@@ -505,12 +536,10 @@
                 class="input-newsletter"
               />
               <button type="submit" class="sign-up">
-                <div class="button-sign-up">
-                  Zapisz się
-                  <svg class="send" width="24px" height="24px">
-                    <use href="images/icons.svg#icon-icon-send"></use>
-                  </svg>
-                </div>
+                Zapisz się
+                <svg class="send" width="24px" height="24px">
+                  <use href="images/icons.svg#icon-icon-send"></use>
+                </svg>
               </button>
             </div>
           </form>
